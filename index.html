@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,8 +14,12 @@
   --white: #fff;
   --black: #171717;
   --yellow: #facc15;
+  --yellow-soft: #fef9c3;
+  --yellow-dark: #a16207;
   --muted: #777;
   --border: #e7e7e7;
+  --green: #16a34a;
+  --green-soft: #dcfce7;
 }
 
 * {
@@ -39,14 +42,12 @@ body {
 }
 
 /* NAVBAR */
-
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 35px;
 }
-
 .logo {
   display: flex;
   align-items: center;
@@ -55,7 +56,6 @@ body {
   font-weight: 800;
   letter-spacing: -.5px;
 }
-
 .logo-icon {
   width: 36px;
   height: 36px;
@@ -66,7 +66,6 @@ body {
   place-items: center;
   font-size: 19px;
 }
-
 .version {
   font-size: 10px;
   font-weight: 700;
@@ -77,46 +76,39 @@ body {
 }
 
 /* INTRO */
-
 .intro {
   margin-bottom: 26px;
 }
-
 .intro h1 {
   font-size: 29px;
   letter-spacing: -1.3px;
   font-weight: 800;
   margin-bottom: 9px;
 }
-
 .intro p {
   font-size: 13px;
   color: var(--muted);
   line-height: 1.7;
 }
 
-/* MAIN */
-
+/* MAIN PANEL */
 .panel {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 13px;
   padding: 23px;
 }
-
 .section-title {
   font-size: 14px;
   font-weight: 800;
   margin-bottom: 7px;
 }
-
 .section-desc {
   font-size: 11px;
   color: var(--muted);
   line-height: 1.6;
   margin-bottom: 21px;
 }
-
 label {
   display: block;
   font-size: 11px;
@@ -128,7 +120,6 @@ label {
   display: flex;
   gap: 8px;
 }
-
 input {
   width: 100%;
   min-width: 0;
@@ -142,22 +133,18 @@ input {
   color: #222;
   transition: .2s;
 }
-
 input:focus {
   border-color: #999;
   background: white;
 }
-
 input::placeholder {
   color: #aaa;
 }
-
 button {
   cursor: pointer;
   font-weight: 700;
   transition: .15s;
 }
-
 .paste-btn {
   flex-shrink: 0;
   padding: 0 15px;
@@ -167,11 +154,9 @@ button {
   color: #333;
   font-size: 11px;
 }
-
 .paste-btn:active {
   background: #eee;
 }
-
 .search-btn {
   width: 100%;
   height: 47px;
@@ -182,22 +167,18 @@ button {
   border-radius: 7px;
   font-size: 12px;
 }
-
 .search-btn:hover {
   background: #f0c000;
 }
-
 .search-btn:active {
   transform: scale(.99);
 }
-
 .search-btn:disabled {
   opacity: .6;
   cursor: wait;
 }
 
-/* MESSAGE */
-
+/* TOAST */
 .toast {
   display: none;
   padding: 12px;
@@ -206,17 +187,14 @@ button {
   font-size: 11px;
   line-height: 1.5;
 }
-
 .toast.show {
   display: block;
 }
-
 .toast.error {
   background: #fff0f0;
   color: #c43d3d;
   border: 1px solid #f5d1d1;
 }
-
 .toast.success {
   background: #effaf2;
   color: #247a3b;
@@ -224,16 +202,13 @@ button {
 }
 
 /* LOADING */
-
 .loading {
   display: none;
   margin-top: 20px;
 }
-
 .loading.show {
   display: block;
 }
-
 .loading-line {
   height: 12px;
   background: #eee;
@@ -241,22 +216,18 @@ button {
   margin-bottom: 10px;
   animation: pulse 1.2s infinite alternate;
 }
-
 @keyframes pulse {
   to { opacity: .4; }
 }
 
-/* RESULTS */
-
+/* RESULT */
 .result {
   display: none;
   margin-top: 24px;
 }
-
 .result.show {
   display: block;
 }
-
 .result-heading {
   font-size: 14px;
   font-weight: 800;
@@ -264,7 +235,6 @@ button {
 }
 
 /* PROFILE */
-
 .profile {
   display: flex;
   align-items: center;
@@ -275,7 +245,6 @@ button {
   border-radius: 9px;
   margin-bottom: 22px;
 }
-
 .avatar {
   width: 48px;
   height: 48px;
@@ -289,22 +258,18 @@ button {
   flex-shrink: 0;
   overflow: hidden;
 }
-
 .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .profile-info {
   min-width: 0;
 }
-
 .profile-info h3 {
   font-size: 12px;
   font-weight: 800;
 }
-
 .profile-info p {
   color: #777;
   font-size: 10px;
@@ -312,7 +277,6 @@ button {
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
-
 .profile-badge {
   font-size: 9px;
   color: #777;
@@ -320,20 +284,20 @@ button {
   display: inline-block;
 }
 
-/* PRESET */
-
+/* ===== PRESET LIST ===== */
 .preset-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 12px;
 }
-
 .preset-heading h3 {
   font-size: 13px;
   font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-
 .count {
   font-size: 10px;
   color: #666;
@@ -351,50 +315,120 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 13px;
+  padding: 14px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   background: white;
+  transition: all .2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.preset-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--yellow);
+}
+.preset-item:hover {
+  border-color: #d4d4d4;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.04);
 }
 
 .preset-icon {
-  width: 35px;
-  height: 35px;
-  border-radius: 7px;
-  background: #fff7d6;
-  color: #9c7900;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: var(--yellow-soft);
+  color: var(--yellow-dark);
   display: grid;
   place-items: center;
-  font-size: 17px;
   flex-shrink: 0;
+}
+.preset-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
 }
 
 .preset-info {
   flex: 1;
   min-width: 0;
 }
-
 .preset-name {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   overflow-wrap: anywhere;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-
 .preset-type {
   font-size: 9px;
   color: #888;
-  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.preset-type .dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #bbb;
 }
 
+/* Status Badge */
+.status-badge {
+  font-size: 8px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+.status-badge.ready {
+  background: var(--green-soft);
+  color: var(--green);
+}
+.status-badge.no-link {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* Tombol Ambil */
 .get-btn {
   text-decoration: none;
   color: #171717;
   background: var(--yellow);
-  padding: 9px 12px;
-  border-radius: 6px;
+  padding: 9px 14px;
+  border-radius: 7px;
   font-size: 10px;
   font-weight: 800;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #e6b900;
+  transition: .15s;
+}
+.get-btn svg {
+  width: 11px;
+  height: 11px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+}
+.get-btn:hover {
+  background: #f0c000;
+}
+.get-btn:active {
+  transform: scale(.97);
 }
 
 .empty {
@@ -408,7 +442,6 @@ button {
 }
 
 /* FOOTER */
-
 .footer {
   margin-top: 30px;
   padding: 18px 0;
@@ -418,7 +451,6 @@ button {
   line-height: 1.9;
   color: #888;
 }
-
 .footer strong {
   color: #333;
 }
@@ -428,8 +460,8 @@ button {
   .intro h1 { font-size: 26px; }
   .panel { padding: 18px; }
   .paste-btn { padding: 0 11px; }
-  .preset-item { gap: 8px; padding: 10px; }
-  .get-btn { padding: 9px; }
+  .preset-item { gap: 8px; padding: 11px; }
+  .get-btn { padding: 9px 11px; font-size: 9px; }
 }
 </style>
 </head>
@@ -499,7 +531,9 @@ button {
       </div>
 
       <div class="preset-heading">
-        <h3>Hasil Preset</h3>
+        <h3>
+          Hasil Preset
+        </h3>
         <span class="count" id="count">0 Preset</span>
       </div>
 
@@ -565,6 +599,10 @@ function safeLink(value) {
   return null;
 }
 
+/* SVG Icons */
+const ICON_DOWNLOAD = `<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>`;
+const ICON_AM = `<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+
 function renderResult(data) {
   const author = data.author || {};
   const video = data.video || {};
@@ -598,11 +636,15 @@ function renderResult(data) {
   if(!presets.length) {
     const empty = document.createElement("div");
     empty.className = "empty";
-    empty.textContent = "Tidak ada preset ditemukan. Coba video TikTok lainnya.";
+    empty.innerHTML = `
+      <div style="font-size:28px;margin-bottom:8px;">🔍</div>
+      Tidak ada preset ditemukan.<br>
+      Coba video TikTok lainnya.
+    `;
     list.appendChild(empty);
   }
 
-  presets.forEach(preset => {
+  presets.forEach((preset, index) => {
     const title = preset.title || preset.name || "Preset Alight Motion";
     const type = preset.type || preset.category || "AM Preset";
     const link = safeLink(preset.url || preset.link || preset.download || "");
@@ -610,10 +652,12 @@ function renderResult(data) {
     const item = document.createElement("div");
     item.className = "preset-item";
 
+    // Icon
     const icon = document.createElement("div");
     icon.className = "preset-icon";
-    icon.textContent = "↗";
+    icon.innerHTML = ICON_AM;
 
+    // Info
     const info = document.createElement("div");
     info.className = "preset-info";
 
@@ -623,10 +667,14 @@ function renderResult(data) {
 
     const category = document.createElement("div");
     category.className = "preset-type";
-    category.textContent = type;
+    category.innerHTML = `
+      <span class="status-badge ${link ? 'ready' : 'no-link'}">${link ? 'READY' : 'NO LINK'}</span>
+      <span class="dot"></span>
+      ${type}
+    `;
 
-    info.append(name,category);
-    item.append(icon,info);
+    info.append(name, category);
+    item.append(icon, info);
 
     if(link) {
       const a = document.createElement("a");
@@ -634,12 +682,13 @@ function renderResult(data) {
       a.href = link;
       a.target = "_blank";
       a.rel = "noopener noreferrer";
-      a.textContent = "Ambil";
+      a.innerHTML = `${ICON_DOWNLOAD} Ambil`;
       item.appendChild(a);
     } else {
       const unavailable = document.createElement("span");
       unavailable.className = "preset-type";
-      unavailable.textContent = "Link tidak tersedia";
+      unavailable.style.fontSize = "9px";
+      unavailable.textContent = "Tidak tersedia";
       item.appendChild(unavailable);
     }
 
